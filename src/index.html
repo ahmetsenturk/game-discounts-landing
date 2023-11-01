@@ -35,7 +35,31 @@
         <h2>Easiest and most profitable game and in-app payments - collect points and spend them!</h2>
         <p>Implementation is currently in progress.<br>Our service will be available soon.</p>
 
+        <form id="emailForm">
+          <label for="user_email">Enter your email address:</label>
+          <input type="email" id="user_email" required>
+          <button type="button" onclick="sendEmail()">Send Email</button>
+      </form>
+  </div>
 
+  <script>
+      function sendEmail() {
+          const user_email = document.getElementById("user_email").value;
+          const to = "gamingbirseyler@gmail.com"; // Replace with the email address where you want to send the emails.
+          const subject = "New email from Game Payments";
+          const message = "User email: " + user_email;
+
+          const mailtoLink = "mailto:" + to + "?subject=" + subject + "&body=" + message;
+
+          // Create a temporary anchor element to trigger the email client.
+          const tempLink = document.createElement("a");
+          tempLink.href = mailtoLink;
+
+          // Trigger the click event to open the default email client.
+          tempLink.click();
+      }
+  </script>
+      
     </div>
 </body>
 </html>
